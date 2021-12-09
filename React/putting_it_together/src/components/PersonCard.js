@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const PersonCard = (props) => {
-    const {firstName, lastName, age, hairColor} = props.person
+    const {firstName, lastName, age, hairColor} = props
     const [addAge, setAddAge] = useState(age)
 
     const increase = () => {

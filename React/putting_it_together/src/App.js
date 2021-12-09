@@ -30,10 +30,23 @@ function App() {
 
   return (
     <div className="App">
-      <PersonCard person = {person[0]}/>
+      {/* <PersonCard person = {person[0]}/>
       <PersonCard person = {person[1]}/>
       <PersonCard person = {person[2]}/>
-      <PersonCard person = {person[3]}/>
+      <PersonCard person = {person[3]}/> */}
+      {
+        person.map((member, index) => 
+          (
+            <PersonCard 
+              key={index}
+              firstName = {member.firstName}
+              lastName = {member.lastName}
+              age = {member.age}
+              hairColor = {member.hairColor}
+            />
+          )
+        )
+      }
     </div>
   );
 }
