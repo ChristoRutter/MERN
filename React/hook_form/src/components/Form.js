@@ -28,7 +28,11 @@ const Form = (props)=>{
             password: password,
             confirmPassword: confirmPassword
         }])
-        
+        {setFirstName ("")}
+        {setLastName ("")}
+        {setEmail ("")}
+        {setPassword ("")}
+        {setConfirmPassword ("")}
 
 
     }
