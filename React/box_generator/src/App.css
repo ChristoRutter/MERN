@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.Display{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+input{
+  margin: 20px;
+}
