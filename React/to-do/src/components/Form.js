@@ -9,12 +9,24 @@ const Form = (props) => {
         setList(list.filter((current, index)=>current.id !== idFromBelow))
     }
 
+    const updateList = (idB) => {
+        const updatedCompleteList = list.map((current, index)=>{
+            if(idB === index){
+                current.complete = !current.complete
+            }
+            return list
+        })
+        setList(updatedCompleteList)
+    }
+
     
     const addStuff = (e) => {
         e.preventDefault()
+        
         setList([...list, {
             item: item,
             id: Math.floor(Math.random() * 100000000),
+            complete: false
         }])
         
         setItem("")
@@ -42,21 +54,17 @@ const Form = (props) => {
                     <div 
                     key={index}>
                         <p>
-                            <span
-                            {...checker === true?
-                                {className: "line-through"}
-                                :null
-
-                            }
                             
-                            >
 
                                 {current.item}
-                            </span>
+                            
                             <input
                                 className="m-2"
                                 type="checkbox"
-                            
+                                onChange = {(e)=> {
+                                    updateList(current.id)
+                                }}
+                                checked={current.complete}
                             ></input>
                             <button 
                                 className="bg-black p-1 m-3 rounded-md text-white"
