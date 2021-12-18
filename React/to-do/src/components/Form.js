@@ -10,11 +10,13 @@ const Form = (props) => {
     }
 
     const updateList = (idB) => {
-        const updatedCompleteList = list.map((current, index)=>{
-            if(idB === index){
-                current.complete = !current.complete
+        let updatedCompleteList = list.map((current, index)=>{
+            if(idB === current.id){
+                let updatedItem = {...current}
+                updatedItem.complete = !updatedItem.complete
+                return updatedItem
             }
-            return list
+            return current
         })
         setList(updatedCompleteList)
     }
@@ -32,7 +34,14 @@ const Form = (props) => {
         setItem("")
 
     }
-
+    // let styled = (complete) => {
+    //     if(complete === true) {
+    //         return "completed"
+    //     }
+    //     else{
+    //         return "notCompleted"
+    //     }
+    // }
     return (
         <div>
             <form onSubmit = {addStuff}>
@@ -54,9 +63,15 @@ const Form = (props) => {
                     <div 
                     key={index}>
                         <p>
-                            
+                           { 
+                            current.complete?
+                            <span className= "completed">{current.item}</span>
+                            :<span className= "notCompleted">{current.item}</span>
+                            // <span className={`${styled(current.complete)}`}>
 
-                                {current.item}
+                            //     {current.item}
+                            // </span>
+                            }
                             
                             <input
                                 className="m-2"
