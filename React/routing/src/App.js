@@ -13,12 +13,14 @@ function App() {
     <div className="App">
       <div>
         <Link to = "/Home">Home</Link>
-        <Link to = "/:number">Number</Link>
       </div>
 
       <form>
+        <Link to = "/:number">Number</Link>
+        <p>
         <label>Enter a number: </label>
         <input onChange={(e)=> setNumber(e.target.value)} type="number" value = {number} name="number"></input>
+        </p>
       </form>
 
       <Router>
