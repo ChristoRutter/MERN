@@ -5,7 +5,7 @@ const String = (props) => {
     return (
 
 
-        <h1>{props.string}</h1>
+        <h1>The word is: {props.string}</h1>
     )
 }
 
