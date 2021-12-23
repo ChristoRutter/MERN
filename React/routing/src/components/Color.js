@@ -5,7 +5,7 @@ const Color = (props) => {
     return (
         <h1
         style={
-            props.color !== undefined?
+            props.color !== undefined && props.bcolor !== undefined?
             {
             color: props.color,
             backgroundColor: props.bcolor
