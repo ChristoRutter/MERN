@@ -7,10 +7,10 @@ module.exports = (app) => {
 
     app.post("/api/jokes", JokeController.createJoke)
 
-    app.get("/api/jokes/:_id", JokeController.findOneJoke)
+    app.get("/api/jokes/:id", JokeController.findOneJoke)
 
-    app.put("/api/jokes/:_id", JokeController.updateJoke)
+    app.put("/api/jokes/:id", JokeController.updateJoke)
 
-    app.delete("/api/jokes/:_id", JokeController.deleteJoke)
+    app.delete("/api/jokes/:id", JokeController.deleteJoke)
 
 }
