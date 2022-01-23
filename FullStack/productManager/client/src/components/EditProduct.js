@@ -47,6 +47,7 @@ const EditProduct = (props) => {
     return (
 
         <div>
+            <Link to={"/"}>Home</Link>
                 <form onSubmit={productEdit}>
                 <p>
                     <label>Title: </label>

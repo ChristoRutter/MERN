@@ -36,6 +36,16 @@ const ProductList = (props) => {
             .catch((err)=>{console.log(err)})
     }
 
+    const deleteProduct = (belowId) => {
+        axios.delete(`http://localhost:8000/api/products/${belowId}`)
+            .then((res)=>{
+                console.log(res)
+                console.log(res.data)
+                setProductList(productList.filter((product, index)=>product._id !== belowId))
+            })
+            .catch((err)=>{console.log(err)})
+    }
+
 
     return (
 
@@ -67,9 +77,10 @@ const ProductList = (props) => {
 
                     <div key={index}>
                         <Link to={`/products/${product._id}`}>
-                        <p>{product.title}</p>
+                        <h2>{product.title}</h2>
                         </Link>
                         <Link to={`/products/edit/${product._id}`}>Edit</Link>
+                        <button onClick={() => deleteProduct(product._id)}>Delete</button>
                     </div>
             ))
             }
