@@ -69,6 +69,7 @@ const ProductList = (props) => {
                         <Link to={`/products/${product._id}`}>
                         <p>{product.title}</p>
                         </Link>
+                        <Link to={`/products/edit/${product._id}`}>Edit</Link>
                     </div>
             ))
             }
