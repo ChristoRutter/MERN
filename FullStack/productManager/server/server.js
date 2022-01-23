@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 app.use(cors({
-    origin: "https://localhost:3000"
+    origin: "http://localhost:3000"
 }))
 
 

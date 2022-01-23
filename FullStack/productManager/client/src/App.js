@@ -1,11 +1,17 @@
 import './App.css';
-import Form from './components/Form'
+import ProductList from './components/ProductList'
+import SingleProduct from './components/SingleProduct'
+import {Router} from '@reach/router'
 
 
 function App() {
   return (
     <div className="App">
-      <h1>Product Manager</h1>
+      <Router>
+        <ProductList path="/" />
+        <SingleProduct path="/products/:id" />
+      </Router>
+      
     </div>
   );
 }
